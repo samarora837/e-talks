@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+				<http pattern="/" security="none" />
+				<http pattern="/howitworks" security="none" />
+				<http pattern="/loginfailed" security="none" />
+				<!-- <http pattern="/login" security="none" />  -->
+				<http pattern="/signup" security="none" />
+				<http pattern="/emailCheck" security="none" />
+				<http pattern="/tutor/facebook" security="none" />
+				<http pattern="/facebookStudent" security="none" />
+				<http pattern="/become-tutor" security="none" />
+				<http pattern="/verifyUserRole" security="none" />
+				<http pattern="/multipleRoleUseremailCheck" security="none" />
+				<http pattern="/getTimeZone" security="none" />
+				<http pattern="/emailExistCheck" security="none" />
+				<!-- <http pattern="/checkSessionStartTime" security="none" />
+				<http pattern="/checkStudentTutorAvailability" security="none" /> -->
+				<http pattern="/forgotPassword" security="none" />
+                <http pattern="/resetForgotPassword" security="none" />
+                <http pattern="/saveNewPassword" security="none" />
+                	<http pattern="/firebaseCreateUser" security="none" />
+                	<http pattern="/getAllChatBarDetailsWithCriteria" security="none" />
+                
+                <http pattern="/tutor/saveTutor" security="none" />
+                <http pattern="/tutor/register" security="none" />
+                <http pattern="/tutor/tutorEmailCheck" security="none" />
+                <http pattern="/student/studentregister" security="none" />
+                <http pattern="/student/studentregisterinfo" security="none" />
+                <http pattern="/student/savestudent" security="none" />
+                <http pattern="/student/registersuccess" security="none" />
+                <http pattern="/student/parentEmailCheck" security="none" />
+                <http pattern="/student/buyMinuteRegister" security="none" />
+                <http pattern="/student/planSubscriptionRegister" security="none" />
+                <http pattern="/student/createProfileRegister" security="none" />
+                
+                
+                <http pattern="/parent/parentRegistration" security="none" />
+                <http pattern="/parent/parentRegisterinfo" security="none" />
+                <http pattern="/parent/saveParentInfo" security="none" />
+                <http pattern="/parent/parentRegisterSuccess" security="none" />
+                <http pattern="/parent/verifyStudentEmail" security="none" />
+                
+                <http pattern="/admin/" security="none" />
+                <http pattern="/admin/forgotPass" security="none" />
+                <http pattern="/admin/resetForgotPassword" security="none" />
+                <http pattern="/admin/saveNewPassword" security="none" />
+                <http pattern="/admin/loginfailedadmin" security="none" />
+
+	<http auto-config="true" use-expressions="true" >
+		
+ 	 	<intercept-url pattern="/sys-admin/*" access="hasRole('SysAdmin')" />
+		<intercept-url pattern="/admin/*" access="hasAnyRole('Admin')" />
+	 	<intercept-url pattern="/cus-care/*" access="hasAnyRole('Support')" />
+		<intercept-url pattern="/parent/*" access="hasAnyRole('Parent')" />
+ 		<intercept-url pattern="/student/*" access="hasAnyRole('Student')" />
+		<intercept-url pattern="/tutor/*" access="hasAnyRole('Tutor')" /> 
+ 	
+		
+		<form-login login-page="/" authentication-success-handler-ref="loginSuccessHandler"
+			authentication-failure-handler-ref="loginFailureHandler"/>
+		<logout success-handler-ref="logoutSuccessHandler" />
+		
+		
+	<!-- 	<form-login login-page="/" authentication-success-handler-ref="loginSuccessHandler" 
+	 authentication-failure-handler-ref="loginFailureHandler" 	default-target-url="/role-check" />
+			
+		<remember-me key="_spring_security_remember_me" data-source-ref="miprofeDataSource" 
+		authentication-success-handler-ref="loginSuccessHandler"/>
+		<logout success-handler-ref="logoutSuccessHandler" />
+		<access-denied-handler error-page="/loginrecheck"/>
+		<session-management invalid-session-url="/"></session-management> -->
+		 </http> 
+		 
+		
+		<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userDetailsService">
+			
+		</authentication-provider>
+	</authentication-manager>
+	<beans:bean id="loginSuccessHandler"
+		class="com.miprofe.authenticate.LoginSuccessHandler">
+		<!-- <beans:property name="alwaysUseDefaultTargetUrl" value="false"/> <beans:property 
+			name="defaultTargetUrl" value="/dashboard" /> -->
+	</beans:bean>
+
+	<beans:bean id="logoutSuccessHandler"
+		class="com.miprofe.authenticate.LogoutSuccessHandlerNew">
+		
+	</beans:bean>
+	
+	<beans:bean id="loginFailureHandler"
+		class="com.miprofe.authenticate.LoginFailureHandler">
+		
+	</beans:bean>
+	
+</beans:beans>

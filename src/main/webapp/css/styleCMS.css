@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+
+/*privacy*/
+.privacy-con,.faq-con, .abt-con, .news-con, .tips-con{width:100%; float:left;}
+.privacy-con p, .faq-con p{padding-top:10px;}
+.ques-con{background-color:#EBEBEB; width:100%; padding:10px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.faq-con .ques{font-weight:700; border-bottom:1px solid #ffffff;}
+.faq-con .ques:last-child{border-bottom:none;}
+.faq-con .ques span{width:30px; float:left; margin-right:5px;}
+.faq-con .ans{color:#666666;}
+.faq-con .ans h5{font-size:14px; font-weight:700;  color:#065591; padding-bottom:5px; }
+.faq-con .ans p{color:#666666; padding:15px 0 0px;}
+/*About Us*/
+.abt-lt{width:65%; float:left;}
+.abt-rt{width:33%; float:right;}
+.abt-rt .mm-video{width:100%; float:left; border:1px solid #41719c; min-height:120px; position:relative; margin-bottom:20px;}
+#mmVideoBtnRow{height:25px; position:absolute; top:50%; margin-top:-13px; width:100%;display:none;text-align:center;}
+.abt-rt .mm-video:hover #mmVideoBtnRow {display:block;}
+.abt-rt .mm-video img{width:100%; display:block;}
+
+.abt-rt .bcm-a-tutor{width:100%;}
+.abt-rt .bcm-a-tutor a{display:block; min-width:100%; box-sizing:border-box; height:auto; line-height:25px; padding:5px 7px;}
+.abt-rt .bcm-a-tutor a:hover{display:block; min-width:100%; box-sizing:border-box; height:auto; line-height:25px; padding:5px 7px;}
+
+/*News*/
+.newsRow{width:100%; float:left; padding-bottom:5px;}
+.news-lt{width:180px; float:left; margin-top:7px;}
+.news-rt{padding-left:200px;}
+.news-lt .mm-video{width:100%; float:left; border:1px solid #41719c; min-height:120px; position:relative; margin-bottom:20px;}
+.news-lt .mm-video:hover #mmVideoBtnRow {display:block;}
+.news-lt .mm-video img{width:100%; display:block;}
+
+/*Tips*/
+.tips-top{width:100%; float:left; margin-bottom:20px;padding:0 15px 0 0 !important;}
+.tips-top .dlFiles{float:right; width:330px; background-color:#e2e2e2; overflow:hidden;}
+.tips-top .tipsTxt{padding-right:350px;}
+.tips-top .dlFiles .hdr{width:100%; padding:7px 10px; font-size:18px; color:#ffffff; font-weight:700;
+background-color:#16ae02;}
+.tips-top .dlFiles ul{margin:0; padding:5px;}
+.tips-top .dlFiles ul li{list-style:none; text-align:center; width:33%; float:left; padding:10px 0;}
+.tips-top .dlFiles ul li .filesTxt{width:100%; float:left; padding:5px 0; font-size:12px; color:#3c3c3c; min-height:45px;}
+.tips-top .dlFiles ul li .filesTxt a{text-decoration:none; color:#3c3c3c;}
+.tips-top .dlFiles ul li .filesTxt a:hover{text-decoration:underline;}
+
+.tips-vid{width:100%; float:left;}
+.tips-vid ul{margin:0; padding:0;}
+.tips-vid ul li{list-style:none; float:left; width:30%; min-height:200px; margin:28px 28px 0px 0;padding:1px;}
+.tips-vid ul li:nth-child(3n){margin-right:0;}
+.tips-vid ul li h3{font-size:14px; font-weight:700; color:#0060a8; margin:0 0 3px; padding:0;}
+.tips-vid ul li .video{width:100%; height:auto; border:1px solid #d1d1d1; position:relative; float:left;}
+.tips-vid ul li .video img{width:100%; display:block;}
+.tips-vid ul li .play-icon{width:79px; height:55px; position:absolute; left:50%; margin-left:-39px; 
+top:50%; margin-top:-27px;display:none;}
+.tips-vid ul li .video:hover .play-icon{display:block;}
+
+
+/*Responsive Classes Start*/
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+
+/*Tips*/
+.tips-vid ul li{width:30%; min-height:200px; margin:28px 5% 0px 0;padding:1px;}
+.tips-vid ul li:nth-child(3n){margin-right:0;}
+.tips-vid ul li h3{font-size:14px; font-weight:700; color:#0060a8; margin:0 0 3px; padding:0;}
+}
+
+@media only screen and (min-width:896px) and (max-width:1023px) {
+
+/*Tips*/
+.tips-vid ul li{width:30%; min-height:200px; margin:28px 5% 0px 0;padding:1px;}
+.tips-vid ul li:nth-child(3n){margin-right:0;}
+.tips-vid ul li h3{font-size:14px; font-weight:700; color:#0060a8; margin:0 0 3px; padding:0;}
+}
+
+@media only screen and (min-width:768px) and (max-width:895px) {
+
+
+/*Tips*/
+.tips-vid ul li{width:30%; min-height:170px; margin:28px 5% 0px 0;padding:1px;}
+.tips-vid ul li:nth-child(3n){margin-right:0;}
+.tips-vid ul li h3{font-size:14px; font-weight:700; color:#0060a8; margin:0 0 3px; padding:0;}
+
+}
+@media only screen and (min-width:595px) and (max-width:767px) {
+	
+
+/*Tips*/
+.tips-vid ul li{width:30%; min-height:150px; margin:28px 5% 0px 0;padding:1px;}
+.tips-vid ul li:nth-child(3n){margin-right:0;}
+.tips-vid ul li h3{font-size:14px; font-weight:700; color:#0060a8; margin:0 0 3px; padding:0;}
+
+	}
+
+
